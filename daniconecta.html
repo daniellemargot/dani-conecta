@@ -1,0 +1,361 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Dani Conecta – Agenda de Tours</title>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--pri:#0a3f8f;--pri2:#e8f0fb;--ok:#1e8a4c;--bg:#f4f6f9;--card:#fff;--tx:#1d2733;--mut:#647184;--bd:#d5dce6;--warn:#fff4d6;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--pri:#7fb0ff;--pri2:#1a2a44;--ok:#4cc27f;--bg:#12161c;--card:#1a2029;--tx:#e6ebf2;--mut:#93a0b3;--bd:#2c3644;--warn:#3b3218;color-scheme:dark}}
+:root[data-theme="dark"]{--pri:#7fb0ff;--pri2:#1a2a44;--ok:#4cc27f;--bg:#12161c;--card:#1a2029;--tx:#e6ebf2;--mut:#93a0b3;--bd:#2c3644;--warn:#3b3218;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tx);font:14px/1.45 "Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
+h1,h2,h3{margin:0;font-weight:600}h2{font-size:20px}h3{font-size:15px}
+button,input,select,textarea{font:inherit;color:inherit}
+input,select,textarea{width:100%;padding:7px 9px;border:1px solid var(--bd);border-radius:4px;background:var(--card)}
+input:focus,select:focus,textarea:focus,button:focus-visible{outline:2px solid var(--pri);outline-offset:1px}
+button{cursor:pointer;border:1px solid var(--bd);background:var(--card);padding:7px 12px;border-radius:4px}
+button.p{background:var(--pri);border-color:var(--pri);color:#fff}[data-theme=dark] button.p{color:#0b1220}
+button.s{padding:3px 8px;font-size:12px}button.d{color:#b3261e}
+label{display:block;font-size:12px;color:var(--mut);margin-bottom:3px}
+#app{display:flex;min-height:100vh}
+aside{width:210px;background:var(--pri);color:#fff;padding:16px 0;flex:none}
+[data-theme=dark] aside{background:#0f1b30}
+aside .br{padding:0 16px 14px;border-bottom:1px solid rgba(255,255,255,.2);margin-bottom:8px}
+aside .br b{font-size:17px;display:block}aside .br small{opacity:.8}
+aside a{display:block;padding:9px 16px;color:#fff;text-decoration:none;cursor:pointer;border-left:3px solid transparent}
+aside a.on{background:rgba(255,255,255,.14);border-left-color:#5fd08a}
+aside .us{padding:14px 16px;font-size:12px;opacity:.9;margin-top:12px;border-top:1px solid rgba(255,255,255,.2)}
+main{flex:1;padding:20px 24px;min-width:0}
+.top{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:14px}
+.box{background:var(--card);border:1px solid var(--bd);border-radius:4px;padding:14px}
+.kp{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin-bottom:14px}
+.kp div{background:var(--card);border:1px solid var(--bd);border-left:3px solid var(--pri);padding:9px 12px}
+.kp b{font-size:22px;display:block}.kp span{color:var(--mut);font-size:12px}
+.g2{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px;margin-bottom:12px}
+.fl{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px;margin-bottom:10px}
+.tw{overflow-x:auto;background:var(--card);border:1px solid var(--bd);border-radius:4px}
+table{border-collapse:collapse;width:100%;min-width:820px}
+th{background:var(--pri2);text-align:left;font-weight:600;font-size:12px;white-space:nowrap}
+th,td{padding:8px 10px;border-bottom:1px solid var(--bd)}tr:hover td{background:var(--pri2)}
+td.ac{white-space:nowrap}td.ac button{margin-right:3px}
+.tag{display:inline-block;padding:1px 8px;border-radius:10px;font-size:12px;color:#fff;white-space:nowrap}
+.hoje td{font-weight:600}
+.bar{display:flex;align-items:center;gap:8px;margin:4px 0;font-size:12px}.bar i{display:block;height:12px;background:var(--pri);border-radius:2px;min-width:2px}
+.bar span:first-child{width:110px;flex:none;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.ov{position:fixed;inset:0;background:rgba(10,20,40,.5);display:flex;align-items:flex-start;justify-content:center;padding:20px 10px;overflow:auto;z-index:9}
+.md{background:var(--card);border-radius:6px;width:100%;max-width:720px;padding:18px}
+.md fieldset{border:1px solid var(--bd);border-radius:4px;margin:0 0 12px;padding:10px 12px}
+.md legend{font-weight:600;color:var(--pri);padding:0 6px}
+.r{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-bottom:8px}
+.wn{background:var(--warn);border:1px solid #e0b93a;padding:10px;border-radius:4px;margin:8px 0}
+.hi{border-left:2px solid var(--bd);padding:2px 0 2px 10px;margin:6px 0;font-size:13px}.hi small{color:var(--mut)}
+#toast{position:fixed;bottom:16px;right:16px;background:var(--ok);color:#fff;padding:9px 14px;border-radius:4px;display:none;z-index:99}
+.lg{max-width:340px;margin:12vh auto;padding:24px}
+.cal{display:grid;grid-template-columns:repeat(7,1fr);gap:1px;background:var(--bd);border:1px solid var(--bd)}
+.cal>div{background:var(--card);min-height:84px;padding:3px;font-size:12px;min-width:0}
+.cal .h{min-height:0;background:var(--pri2);font-weight:600;text-align:center}
+.cal .o{opacity:.45}.cal .t{outline:2px solid var(--ok);outline-offset:-2px}
+.ev{display:block;width:100%;text-align:left;border:0;border-left:3px solid var(--pri);background:var(--pri2);padding:1px 4px;margin-top:2px;font-size:11px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;border-radius:2px}
+.dm{color:var(--mut);font-size:12px}.dm2{background:var(--pri2);padding:6px 10px;border-radius:4px;font-size:12px;margin-bottom:10px}
+/* ---- refinamento visual ---- */
+:root{--bg:#f2f4f8;--bd:#dde3ec;--navy:#0b2a5b;--sub:#f7f9fc}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f141b;--bd:#2a3442;--sub:#1e2631}button.p{color:#0b1220}}
+:root[data-theme="dark"]{--bg:#0f141b;--bd:#2a3442;--sub:#1e2631}
+body{font-family:"Public Sans","Segoe UI",Roboto,Arial,sans-serif;font-size:14px;line-height:1.5;-webkit-font-smoothing:antialiased}
+h2{font-size:22px;letter-spacing:-.01em;font-weight:600}
+aside{background:var(--navy)}
+aside .br{padding:2px 20px 18px;margin-bottom:10px}
+aside .br b{font-size:16px;font-weight:600;display:flex;align-items:center;gap:10px;letter-spacing:.01em}
+aside .br b::before{content:"DC";display:inline-grid;place-items:center;width:30px;height:30px;border-radius:6px;background:#2fa866;color:#fff;font-size:12px;font-weight:700}
+aside .br small{display:block;margin:6px 0 0;font-size:12px;opacity:.7}
+aside a{font-size:14px;color:rgba(255,255,255,.75);padding:10px 20px;border-left:3px solid transparent;transition:background .15s}
+aside a:hover{background:rgba(255,255,255,.06);color:#fff}
+aside a.on{background:rgba(255,255,255,.1);color:#fff;font-weight:600;border-left-color:#2fa866}
+aside .us{border-top:1px solid rgba(255,255,255,.14);margin-top:auto;padding:16px 20px 4px;opacity:1;color:rgba(255,255,255,.75);line-height:1.5}
+aside .us a{padding:8px 0 0;border:0;text-decoration:underline;font-size:12.5px}
+main{padding:28px 34px 40px}
+.top:first-child{padding-bottom:14px;border-bottom:1px solid var(--bd);margin-bottom:20px}
+button{height:34px;padding:0 14px;border-radius:6px;font-weight:500;transition:background .15s,border-color .15s}
+button:hover{background:var(--pri2);border-color:var(--pri)}
+button.p:hover{background:var(--navy);border-color:var(--navy)}
+button.s{height:26px;padding:0 9px}
+input,select,textarea{border-radius:6px;padding:8px 10px;border-color:var(--bd)}
+input:focus,select:focus,textarea:focus{outline:0;border-color:var(--pri);box-shadow:0 0 0 3px color-mix(in srgb,var(--pri) 22%,transparent)}
+input[type=checkbox]{width:auto}
+label{font-weight:500;font-size:12.5px}
+.box,.tw,.kp div{border-radius:8px}
+.box h3{font-size:14px;padding-bottom:9px;margin-bottom:10px;border-bottom:1px solid var(--bd)}
+.kp{gap:12px}.kp div{padding:14px 16px;border-left:1px solid var(--bd)}
+.kp b{font-size:28px;font-weight:600;line-height:1.1;color:var(--pri);margin-bottom:2px}
+.kp span{font-size:12.5px;color:var(--mut)}
+.tag{background:color-mix(in srgb,var(--c,#888) 14%,transparent);color:color-mix(in srgb,var(--c,#888) 78%,var(--tx));font-weight:500;padding:2px 10px 2px 8px;display:inline-flex;align-items:center;gap:6px}
+.tag::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--c,#888)}
+th{background:var(--sub);color:var(--mut);font-weight:600;padding:11px 12px;border-bottom:1px solid var(--bd)}
+td{padding:11px 12px}
+tr:last-child td{border-bottom:0}
+tr:hover td{background:var(--sub)}
+.hoje td{font-weight:500}.hoje td:first-child{box-shadow:inset 3px 0 0 #2fa866;font-weight:600}
+td.ac button.s{border:0;background:none;color:var(--pri);padding:0 7px;height:auto}
+td.ac button.s:hover{text-decoration:underline;background:none}td.ac button.d{color:#b3261e}
+.bar{margin:7px 0}.bar span:first-child{width:130px;color:var(--tx)}.bar i{height:10px;border-radius:5px}.bar span:last-child{font-weight:600;color:var(--mut)}
+.ov{background:rgba(8,20,45,.55)}
+.md{border-radius:10px;box-shadow:0 12px 40px rgba(0,0,0,.25)}
+.md fieldset{border-radius:8px;padding:12px 14px 6px;background:var(--sub)}
+.md legend{font-size:13px;font-weight:600}
+.wn{border-radius:6px}
+.hi{border-left:2px solid var(--pri);padding-left:12px}
+.cal{border-radius:8px;overflow:hidden}
+.cal .h{padding:7px;color:var(--mut);font-weight:600;font-size:12px}
+.cal>div{padding:5px}
+.cal .t{outline:0}.cal .t b{background:var(--pri);color:#fff;border-radius:10px;padding:0 7px}
+[data-theme=dark] .cal .t b{color:#0b1220}
+.ev{border-radius:4px;padding:2px 6px;height:auto;font-size:11.5px}
+.dm2{border-radius:6px}
+.lgw{display:grid;grid-template-columns:1.1fr 1fr;min-height:100vh;width:100%}
+.lgl{background:var(--navy);color:#fff;display:flex;flex-direction:column;justify-content:center;padding:48px}
+.lgl b{font-size:34px;font-weight:600;letter-spacing:-.01em;display:block}
+.lgl b::after{content:"";display:block;width:48px;height:4px;background:#2fa866;margin-top:14px;border-radius:2px}
+.lgl span{margin-top:14px;opacity:.8;font-size:16px}
+.lgf{align-self:center;justify-self:center;width:100%;max-width:340px;padding:24px}
+@media(max-width:760px){.lgw{grid-template-columns:1fr}.lgl{padding:28px}.lgl b{font-size:26px}}
+@media(min-width:761px){aside{position:sticky;top:0;height:100vh;display:flex;flex-direction:column;overflow:auto}}
+@media(max-width:760px){#app{flex-direction:column}aside{width:100%;display:flex;flex-wrap:wrap;padding:8px}aside .br,aside .us{width:100%;border:0;margin:0;padding:4px 8px}aside a{padding:6px 10px;border-left:0}main{padding:12px}}
+</style></head><body>
+<div id="app"></div><div id="toast" role="status"></div><div id="mo"></div>
+<script>
+/* ===== 1. Camada de dados (trocar por Firebase/Supabase implementando a mesma interface) ===== */
+const Repo={k:'daniConecta.v1',load(){try{return JSON.parse(localStorage.getItem(this.k))}catch(e){return null}},save(d){try{localStorage.setItem(this.k,JSON.stringify(d))}catch(e){}},reset(){try{localStorage.removeItem(this.k)}catch(e){}}};
+const uid=()=>Math.random().toString(36).slice(2,9);
+const iso=d=>{d=new Date(d);return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0')};
+const addD=(s,n)=>{const d=new Date(s+'T12:00');d.setDate(d.getDate()+n);return iso(d)};
+const TODAY=iso(new Date());
+function seed(){
+ const st=[['Tour agendado','#0a3f8f'],['Pré-inscrito','#c77d00'],['Sem inscrição','#7a8594'],['Matrícula financeira','#1e8a4c'],['Tour realizado','#2a8fbd'],['Não compareceu','#b3261e'],['Remarcado','#8a5bb5'],['Matriculado','#0e6b3a'],['Desistiu','#5b4b4b']].map(([n,c])=>({id:uid(),name:n,color:c}));
+ const S=n=>st.find(x=>x.name==n).id;
+ const cs=['Administração','Biomedicina','Ciências Contábeis','Direito','Enfermagem','Engenharia Civil','Fisioterapia','Pedagogia','Psicologia'].map(n=>({id:uid(),name:n}));
+ const C=n=>cs.find(x=>x.name==n).id;
+ const us=[['Danielle','danielle','admin123','Administrador'],['Guilherme','guilherme','123456','Consultor Comercial'],['Coordenação (demo)','coord','123456','Coordenador']].map(([name,login,pw,role])=>({id:uid(),name,login,pw,role,active:true}));
+ const vs=[['Maria Silva','(69) 99911-0001',18,'Rolim de Moura','Enfermagem'],['João Souza','(69) 99911-0002',22,'Nova Brasilândia','Direito'],['Ana Costa','(69) 99911-0003',19,'Rolim de Moura','Biomedicina'],['Pedro Lima','(69) 99911-0004',30,'Santa Luzia','Psicologia'],['Carla Nunes','(69) 99911-0005',17,'Alta Floresta','Fisioterapia']].map(([name,phone,age,city,i])=>({id:uid(),name,phone,age,city,kind:'Aluno em potencial',origin:'Instagram',interest:i,demo:true}));
+ const mk=(v,o,d,t,p,ty,tc,s,cu,note)=>({id:uid(),visitorId:vs[v].id,date:addD(TODAY,d),time:t,people:p,interest:vs[v].interest,type:ty,tourCourse:tc?C(tc):'',statusId:S(s),consultantId:us[cu].id,note,createdBy:us[0].id});
+ const ts=[mk(0,0,-14,'15:00',2,'geral','','Pré-inscrito',0,'Gostou dos laboratórios.'),mk(0,0,0,'09:00',3,'curso','Enfermagem','Tour agendado',0,'Retornará com a mãe.'),mk(1,0,0,'14:00',2,'geral','','Tour agendado',1,''),mk(2,0,2,'10:30',1,'curso','Biomedicina','Tour agendado',0,''),mk(3,0,-5,'16:00',2,'geral','','Tour realizado',1,'Pediu valores.'),mk(4,0,-9,'08:30',4,'geral','','Sem inscrição',1,''),mk(1,0,5,'15:00',1,'geral','','Tour agendado',0,'')];
+ const comp=[{id:uid(),tourId:ts[1].id,name:'João Silva',rel:'Pai'},{id:uid(),tourId:ts[1].id,name:'Ana Silva',rel:'Mãe'}];
+ const hist=ts.map(t=>({id:uid(),tourId:t.id,at:new Date().toISOString(),userId:us[0].id,text:'Agendamento criado (dado de demonstração).'}));
+ return{users:us,visitors:vs,tours:ts,companions:comp,statuses:st,courses:cs,history:hist,leads:[{id:uid(),kind:'interessado',name:'Lucas Ferreira',opp:'',contactDate:addD(TODAY,-3),enrollDate:'',payMethod:'',amount:'',bySignal:'',didTour:'nao',note:'Pediu informações pelo Instagram.',demo:true,createdBy:us[0].id},{id:uid(),kind:'interessado',name:'Beatriz Alves',opp:'OP-1002',contactDate:addD(TODAY,-6),enrollDate:'',payMethod:'',amount:'',bySignal:'',didTour:'nao',note:'',demo:true,createdBy:us[0].id},{id:uid(),kind:'matricula',name:'Rafael Gomes',opp:'OP-1001',contactDate:addD(TODAY,-12),enrollDate:addD(TODAY,-4),payMethod:'Pix',amount:350,bySignal:'sim',didTour:'nao',note:'Matriculou sem visitar a faculdade.',demo:true,createdBy:us[0].id}],settings:{payMethods:PAYM.slice(),origins:['Instagram','WhatsApp','Indicação','Evento','Site','Outros'],kinds:['Aluno em potencial','Responsável/acompanhante','Ambos','Outro'],roles:['Administrador','Equipe Comercial','Consultor Comercial','Diretor','Coordenador','Outro'],rolePerms:{}}};
+}
+const PAYM=['Pix','Cartão de crédito','Cartão de débito','Boleto','Dinheiro','Outro'];
+let DB=Repo.load()||seed();DB.leads=DB.leads||[];DB.settings.payMethods=DB.settings.payMethods||PAYM.slice();const save=()=>Repo.save(DB);
+let ME=null;try{const s=sessionStorage.getItem('dc.me');if(s)ME=DB.users.find(u=>u.id==s&&u.active)||null}catch(e){}
+/* ===== 2. Lógica de negócio ===== */
+const $=(a,i)=>a.find(x=>x.id==i);
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const fd=s=>s?s.split('-').reverse().join('/'):'';
+const can=p=>ME&&(ME.role=='Administrador'||['tour','edit','delete'].includes(p));
+const log=(tid,text)=>DB.history.push({id:uid(),tourId:tid,at:new Date().toISOString(),userId:ME.id,text});
+const V=t=>$(DB.visitors,t.visitorId)||{},ST=t=>$(DB.statuses,t.statusId)||{name:'—',color:'#999'},CN=t=>($(DB.users,t.consultantId)||{}).name||'—',CRS=i=>($(DB.courses,i)||{name:i||'—'}).name;
+const digits=s=>String(s||'').replace(/\D/g,''),norm=s=>String(s||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').trim();
+const tag=t=>`<span class="tag" style="--c:${ST(t).color}">${esc(ST(t).name)}</span>`;
+const typeTxt=t=>t.type=='curso'?'Direcionado: '+esc(CRS(t.tourCourse)):'Geral';
+function toast(m){const e=document.getElementById('toast');e.textContent=m;e.style.display='block';setTimeout(()=>e.style.display='none',2600)}
+function findDup(n,p){return DB.visitors.filter(v=>(digits(p).length>=8&&digits(v.phone)==digits(p))||(norm(v.name)&&norm(v.name)==norm(n)))}
+function findConflict(d,t,self){return DB.tours.filter(x=>x.date==d&&x.time==t&&x.id!=self)}
+/* ===== 3. Filtros e listas ===== */
+let FL={q:'',from:'',to:'',status:'',course:'',city:'',type:'',cons:''};
+function filtered(){const q=norm(FL.q);return DB.tours.filter(t=>{const v=V(t);
+ if(q&&!norm([v.name,v.phone,CRS(t.interest),v.city,ST(t).name].join(' ')).includes(q))return false;
+ if(FL.from&&t.date<FL.from||FL.to&&t.date>FL.to)return false;
+ if(FL.status&&t.statusId!=FL.status||FL.course&&t.interest!=FL.course||FL.city&&v.city!=FL.city||FL.type&&t.type!=FL.type||FL.cons&&t.consultantId!=FL.cons)return false;return true}).sort((a,b)=>(a.date+a.time).localeCompare(b.date+b.time))}
+const opts=(arr,sel,ph)=>(ph!==undefined?`<option value="">${ph}</option>`:'')+arr.map(([v,l])=>`<option value="${esc(v)}"${v==sel?' selected':''}>${esc(l)}</option>`).join('');
+const cities=()=>[...new Set(DB.visitors.map(v=>v.city).filter(Boolean))].sort();
+/* ===== 4. Gráficos ===== */
+function bars(title,o){const e=Object.entries(o).sort((a,b)=>b[1]-a[1]).slice(0,8),m=Math.max(1,...e.map(x=>x[1]));return`<div class="box"><h3>${title}</h3>${e.length?e.map(([k,n])=>`<div class="bar"><span title="${esc(k)}">${esc(k)}</span><i style="width:${n/m*60}%"></i><span>${n}</span></div>`).join(''):'<p class="dm">Sem dados.</p>'}</div>`}
+function count(list,fn){const o={};list.forEach(t=>{const k=fn(t);o[k]=(o[k]||0)+1});return o}
+function charts(list,full){const mo=count(list.slice().sort((a,b)=>a.date.localeCompare(b.date)),t=>t.date.slice(5,7)+'/'+t.date.slice(0,4));
+ let h=bars('Tours por curso de interesse',count(list,t=>CRS(t.interest)))+bars('Tours por status',count(list,t=>ST(t).name))+bars('Tours por mês',mo);
+ if(full)h+=bars('Tours por cidade',count(list,t=>V(t).city||'—'))+bars('Pessoas por tour',count(list,t=>t.people+' pessoa(s)'));return`<div class="g2">${h}</div>`}
+/* ===== 5. Telas ===== */
+const NAV=[['dash','Dashboard'],['ag','Agendamentos'],['cal','Calendário'],['vis','Visitantes'],['int','Interessados'],['mat','Matrículas'],['rel','Relatórios'],['usr','Usuários'],['cfg','Configurações']];
+let view='dash';
+function go(v){view=v;render()}
+function render(){
+ const app=document.getElementById('app');
+ if(!ME){app.innerHTML=`<div class="lgw"><div class="lgl"><b>Dani Conecta</b><span>Agenda de Tours – Estácio FSP</span></div><form class="lgf" onsubmit="return login(event)"><h2>Acesse sua conta</h2><p class="dm">Use o usuário e a senha cadastrados.</p><br><label>E-mail ou usuário</label><input id="lu" autocomplete="username" required><br><br><label>Senha</label><input id="lp" type="password" autocomplete="current-password" required><p id="le" style="color:#b3261e;min-height:18px"></p><button class="p" style="width:100%">Entrar</button>${DB.users.some(u=>u.login=='danielle'&&u.pw=='admin123')?'<p class="dm" style="margin-top:12px">Primeiro acesso: usuário danielle, senha admin123. Você poderá trocar o nome e a senha em seguida.</p>':''}</form></div>`;return}
+ const nav=NAV.filter(n=>!['usr','cfg'].includes(n[0])||ME.role=='Administrador');
+ app.innerHTML=`<aside><div class="br"><b>Dani Conecta</b><small>Agenda de Tours – Estácio FSP</small></div>${nav.map(n=>`<a class="${view==n[0]?'on':''}" onclick="go('${n[0]}')">${n[1]}</a>`).join('')}<div class="us">${esc(ME.name)}<br>${esc(ME.role)}<br><a style="padding:6px 0 0" onclick="profileForm()">Meu perfil</a><a style="padding:6px 0 0" onclick="logout()">Sair da conta</a></div></aside><main id="mn"></main>`;
+ if(ME.role=='Administrador'&&ME.pw=='admin123'&&!document.getElementById('mo').innerHTML)setTimeout(()=>profileForm(1),0);
+ ({dash:vDash,ag:vAg,cal:vCal,vis:vVis,int:vLead,mat:vLead,rel:vRel,usr:vUsr,cfg:vCfg}[view]||vDash)(document.getElementById('mn'));
+}
+function login(e){e.preventDefault();const u=norm(document.getElementById('lu').value),p=document.getElementById('lp').value;
+ const x=DB.users.find(x=>x.active&&(norm(x.login)==u)&&x.pw==p);
+ if(!x){document.getElementById('le').textContent='Usuário ou senha incorretos.';return false}
+ ME=x;try{sessionStorage.setItem('dc.me',x.id)}catch(e){}view='dash';render();return false}
+function logout(){ME=null;try{sessionStorage.removeItem('dc.me')}catch(e){}render()}
+function vDash(m){
+ const L=DB.tours,sid=n=>(DB.statuses.find(s=>s.name==n)||{}).id,c=n=>L.filter(t=>t.statusId==sid(n)).length;
+ const up=L.filter(t=>t.date>=TODAY&&ST(t).name=='Tour agendado').sort((a,b)=>(a.date+a.time).localeCompare(b.date+b.time)).slice(0,8);
+ m.innerHTML=`<div class="top"><h2>Dashboard</h2><button class="p" onclick="tourForm()">+ Novo Tour</button></div><div class="dm2">Os registros de nomes marcados como demonstração são fictícios.</div>
+ <div class="kp"><div><b>${c('Tour agendado')}</b><span>Tours agendados</span></div><div><b>${c('Tour realizado')}</b><span>Tours realizados</span></div><div><b>${L.filter(t=>t.date==TODAY).length}</b><span>Tours de hoje</span></div><div><b>${L.filter(t=>t.date>TODAY).length}</b><span>Próximos tours</span></div><div><b>${DB.visitors.length}</b><span>Visitantes</span></div><div><b>${c('Pré-inscrito')}</b><span>Pré-inscritos</span></div><div><b>${c('Matrícula financeira')}</b><span>Matrículas financeiras</span></div><div><b>${c('Sem inscrição')}</b><span>Sem inscrição</span></div></div>
+ ${leadSummary()}
+ <div class="box" style="margin-bottom:12px"><h3>Próximos tours</h3>${up.length?up.map(t=>`<div style="padding:6px 0;border-bottom:1px solid var(--bd);${t.date==TODAY?'font-weight:600;background:var(--pri2);padding-left:6px':''}"><a href="#" onclick="detail('${t.id}');return false">${fd(t.date)}${t.date==TODAY?' (hoje)':''} ${t.time} — ${esc(V(t).name)} — ${esc(CRS(t.interest))} — ${t.people} pessoa(s)</a></div>`).join(''):'<p class="dm">Nenhum tour agendado.</p>'}</div>${charts(L,false)}`}
+function vAg(m){
+ m.innerHTML=`<div class="top"><h2>Agendamentos</h2><div><button onclick="exportX()">Exportar Excel</button> <button class="p" onclick="tourForm()">+ Novo Tour</button></div></div>
+ <input id="fq" placeholder="Buscar por nome, telefone, curso, cidade ou status" value="${esc(FL.q)}" oninput="FL.q=this.value;tbl()" style="margin-bottom:8px">
+ <div class="fl"><div><label>De</label><input type="date" value="${FL.from}" onchange="FL.from=this.value;tbl()"></div><div><label>Até</label><input type="date" value="${FL.to}" onchange="FL.to=this.value;tbl()"></div>
+ <div><label>Status</label><select onchange="FL.status=this.value;tbl()">${opts(DB.statuses.map(s=>[s.id,s.name]),FL.status,'Todos')}</select></div>
+ <div><label>Curso</label><select onchange="FL.course=this.value;tbl()">${opts(DB.courses.map(s=>[s.id,s.name]),FL.course,'Todos')}</select></div>
+ <div><label>Cidade</label><select onchange="FL.city=this.value;tbl()">${opts(cities().map(c=>[c,c]),FL.city,'Todas')}</select></div>
+ <div><label>Tipo de tour</label><select onchange="FL.type=this.value;tbl()">${opts([['geral','Geral'],['curso','Direcionado ao curso']],FL.type,'Todos')}</select></div>
+ <div><label>Consultor</label><select onchange="FL.cons=this.value;tbl()">${opts(DB.users.map(s=>[s.id,s.name]),FL.cons,'Todos')}</select></div></div><div id="tb"></div>`;tbl()}
+function tbl(){const L=filtered();document.getElementById('tb').innerHTML=`<div class="tw"><table><thead><tr><th>Data</th><th>Horário</th><th>Visitante</th><th>Telefone</th><th>Curso de interesse</th><th>Tipo de tour</th><th>Pessoas</th><th>Status</th><th>Cidade</th><th>Consultor</th><th>Ações</th></tr></thead><tbody>${L.map(t=>{const v=V(t);return`<tr class="${t.date==TODAY?'hoje':''}"><td>${fd(t.date)}</td><td>${t.time}</td><td>${esc(v.name)}</td><td>${esc(v.phone)}</td><td>${esc(CRS(t.interest))}</td><td>${typeTxt(t)}</td><td>${t.people}</td><td>${tag(t)}</td><td>${esc(v.city)}</td><td>${esc(CN(t))}</td><td class="ac"><button class="s" onclick="detail('${t.id}')">Ver</button><button class="s" onclick="tourForm('${t.id}')">Editar</button><button class="s" onclick="tourForm('${t.id}',1)">Remarcar</button><button class="s" onclick="detail('${t.id}')">Histórico</button>${can('delete')?`<button class="s d" onclick="delTour('${t.id}')">Excluir</button>`:''}</td></tr>`}).join('')||'<tr><td colspan="11" class="dm">Nenhum agendamento encontrado. Ajuste os filtros ou crie um novo tour.</td></tr>'}</tbody></table></div><p class="dm">${L.length} registro(s)</p>`}
+function delTour(id){if(!confirm('Excluir este agendamento? O histórico dele também será removido.'))return;DB.tours=DB.tours.filter(t=>t.id!=id);DB.companions=DB.companions.filter(c=>c.tourId!=id);DB.history=DB.history.filter(h=>h.tourId!=id);save();toast('Agendamento excluído.');render()}
+/* Calendário */
+let CAL={mode:'month',d:TODAY};
+const MES=['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'];
+function calMove(n){const d=new Date(CAL.d+'T12:00');if(CAL.mode=='month')d.setMonth(d.getMonth()+n);else d.setDate(d.getDate()+n*(CAL.mode=='week'?7:1));CAL.d=iso(d);render()}
+const evs=d=>DB.tours.filter(t=>t.date==d).sort((a,b)=>a.time.localeCompare(b.time)),evb=t=>`<button class="ev" style="border-left-color:${ST(t).color}" onclick="detail('${t.id}')">${t.time} ${esc(V(t).name)} · ${esc(CRS(t.interest))}</button>`;
+function vCal(m){
+ const D=new Date(CAL.d+'T12:00'),H=['Dom','Seg','Ter','Qua','Qui','Sex','Sáb'].map(x=>`<div class="h">${x}</div>`).join('');let body='';
+ if(CAL.mode=='day'){body='<div class="box">'+(evs(CAL.d).map(evb).join('')||'<p class="dm">Nenhum tour neste dia.</p>')+'</div>'}
+ else{const s=new Date(D);if(CAL.mode=='month'){s.setDate(1)}s.setDate(s.getDate()-s.getDay());const n=CAL.mode=='month'?42:7;let c='';
+  for(let i=0;i<n;i++){const d=iso(s);c+=`<div class="${d==TODAY?'t':''} ${CAL.mode=='month'&&s.getMonth()!=D.getMonth()?'o':''}"><b>${s.getDate()}</b>${evs(d).map(evb).join('')}</div>`;s.setDate(s.getDate()+1)}body=`<div class="cal">${H}${c}</div>`}
+ m.innerHTML=`<div class="top"><h2>Calendário</h2><div><button class="p" onclick="tourForm()">+ Novo Tour</button></div></div><div class="top"><div><button onclick="calMove(-1)">◀</button> <button onclick="CAL.d=TODAY;render()">Hoje</button> <button onclick="calMove(1)">▶</button> <b style="margin-left:8px">${MES[D.getMonth()]} ${D.getFullYear()}${CAL.mode!='month'?' — '+fd(CAL.d):''}</b></div><div>${[['month','Mês'],['week','Semana'],['day','Dia']].map(([k,l])=>`<button class="${CAL.mode==k?'p':''}" onclick="CAL.mode='${k}';render()">${l}</button>`).join(' ')}</div></div>${body}`}
+/* Visitantes */
+let VQ='';
+function vVis(m){m.innerHTML=`<div class="top"><h2>Visitantes</h2><button class="p" onclick="tourForm()">+ Novo Tour</button></div><input placeholder="Buscar visitante por nome, telefone ou cidade" value="${esc(VQ)}" oninput="VQ=this.value;vlist()" style="margin-bottom:10px"><div id="vl"></div>`;vlist()}
+function vlist(){const q=norm(VQ);const L=DB.visitors.filter(v=>!q||norm(v.name+' '+v.phone+' '+v.city).includes(q));
+ document.getElementById('vl').innerHTML=`<div class="tw"><table style="min-width:600px"><thead><tr><th>Nome</th><th>Telefone</th><th>Cidade</th><th>Curso de interesse</th><th>Tours</th><th></th></tr></thead><tbody>${L.map(v=>`<tr><td>${esc(v.name)}${v.demo?' <span class="dm">(demo)</span>':''}</td><td>${esc(v.phone)}</td><td>${esc(v.city)}</td><td>${esc(CRS(v.interest))}</td><td>${DB.tours.filter(t=>t.visitorId==v.id).length}</td><td><button class="s" onclick="profile('${v.id}')">Abrir perfil</button></td></tr>`).join('')||'<tr><td colspan="6" class="dm">Nenhum visitante encontrado.</td></tr>'}</tbody></table></div>`}
+function profile(id){const v=$(DB.visitors,id),ts=DB.tours.filter(t=>t.visitorId==id).sort((a,b)=>(a.date+a.time).localeCompare(b.date+b.time));
+ modal(`<div class="top"><h2>${esc(v.name)}</h2><button onclick="closeM()">Fechar</button></div><p>Telefone: ${esc(v.phone)}<br>Cidade: ${esc(v.city||'—')}<br>Idade: ${esc(v.age||'—')}<br>Perfil: ${esc(v.kind||'—')} · Origem: ${esc(v.origin||'—')}<br>Curso de interesse: ${esc(CRS(v.interest))}</p><h3>Histórico de tours</h3>${ts.map((t,i)=>`<div class="hi"><b>Tour ${i+1}</b> — ${fd(t.date)} ${t.time}<br>Tipo: ${typeTxt(t)}<br>Status: ${tag(t)}<br>Anotação: ${esc(t.note||'—')}<br><button class="s" onclick="detail('${t.id}')">Detalhes</button></div>`).join('')||'<p class="dm">Sem tours.</p>'}<br><button class="p" onclick="tourForm(null,0,'${id}')">+ Adicionar novo tour</button>`)}
+/* Interessados e Matrículas (pessoas que chegaram pelo Dani Conecta, com ou sem tour) */
+let LQ='';
+const brl=n=>(n===''||n==null)?'—':Number(n).toLocaleString('pt-BR',{style:'currency',currency:'BRL'});
+const yx=v=>v=='sim'?'Sim':v=='nao'?'Não':'',yn=v=>yx(v)||'—';
+function leadStats(){const a=DB.leads.length,m=DB.leads.filter(l=>l.kind=='matricula').length;return{a,m,i:a-m,r:a?Math.round(m/a*100):0}}
+function leadSummary(){const s=leadStats();return`<div class="box" style="margin-bottom:12px"><h3>Interessados e matrículas</h3><p style="margin:0">${s.i} interessado(s) · ${s.m} matrícula(s) · conversão de ${s.r}% &nbsp; <a href="#" onclick="go('int');return false">Ver interessados</a> · <a href="#" onclick="go('mat');return false">Ver matrículas</a></p></div>`}
+function leadFiltered(){const mat=view=='mat',q=norm(LQ);return DB.leads.filter(l=>(l.kind=='matricula')==mat&&(!q||norm([l.name,l.opp,l.note].join(' ')).includes(q))).sort((a,b)=>(b.contactDate||b.enrollDate||'').localeCompare(a.contactDate||a.enrollDate||''))}
+function vLead(m){const mat=view=='mat',k=mat?'matricula':'interessado',s=leadStats();
+ m.innerHTML=`<div class="top"><h2>${mat?'Matrículas':'Interessados'}</h2><div><button onclick="exportL()">Exportar Excel</button> <button class="p" onclick="leadForm(null,'${k}')">+ ${mat?'Nova matrícula':'Novo interessado'}</button></div></div>
+ <div class="kp"><div><b>${s.a}</b><span>Total de registros</span></div><div><b>${s.i}</b><span>Interessados</span></div><div><b>${s.m}</b><span>Matrículas</span></div><div><b>${s.r}%</b><span>Conversão (matrículas ÷ total)</span></div></div>
+ <input placeholder="Buscar por nome, nº da oportunidade ou observação" value="${esc(LQ)}" oninput="LQ=this.value;llist()" style="margin-bottom:10px"><div id="ll"></div>`;llist()}
+function llist(){const L=leadFiltered(),mat=view=='mat';
+ document.getElementById('ll').innerHTML=`<div class="tw"><table style="min-width:980px"><thead><tr><th>Nome</th><th>Nº oportunidade</th><th>Data de contato</th><th>Matrícula financeira</th><th>Pagamento</th><th>Valor pago</th><th>Por sinal</th><th>Fez tour</th><th>Observação</th><th>Ações</th></tr></thead><tbody>${L.map(l=>`<tr><td>${esc(l.name||'(sem nome)')}${l.demo?' <span class="dm">(demo)</span>':''}</td><td>${esc(l.opp||'—')}</td><td>${fd(l.contactDate)||'—'}</td><td>${fd(l.enrollDate)||'—'}</td><td>${esc(l.payMethod||'—')}</td><td>${brl(l.amount)}</td><td>${yn(l.bySignal)}</td><td>${yn(l.didTour)}</td><td style="max-width:240px">${esc(l.note||'—')}</td><td class="ac"><button class="s" onclick="leadForm('${l.id}')">Editar</button>${mat?'':`<button class="s" onclick="leadForm('${l.id}','matricula')">Converter em matrícula</button>`}${can('delete')?`<button class="s d" onclick="delLead('${l.id}')">Excluir</button>`:''}</td></tr>`).join('')||'<tr><td colspan="10" class="dm">Nenhum registro encontrado.</td></tr>'}</tbody></table></div><p class="dm">${L.length} registro(s)</p>`}
+function leadForm(id,kind){
+ const b=id?$(DB.leads,id):{kind:'interessado',name:'',opp:'',contactDate:'',enrollDate:'',payMethod:'',amount:'',bySignal:'',didTour:'',note:''},l={...b,kind:kind||b.kind},yo=[['sim','Sim'],['nao','Não']];
+ modal(`<h2>${id?'Editar registro':(l.kind=='matricula'?'Nova matrícula':'Novo interessado')}</h2><p class="dm">Nenhum campo é obrigatório.</p>
+ <fieldset><legend>Identificação</legend><div class="r"><div><label>Nome completo</label><input id="l_n" value="${esc(l.name)}"></div><div><label>Número da oportunidade</label><input id="l_o" value="${esc(l.opp)}"></div><div><label>Situação</label><select id="l_k">${opts([['interessado','Interessado'],['matricula','Matrícula']],l.kind)}</select></div></div></fieldset>
+ <fieldset><legend>Contato e matrícula</legend><div class="r"><div><label>Data de contato</label><input id="l_dc" type="date" value="${esc(l.contactDate)}"></div><div><label>Data da matrícula financeira</label><input id="l_de" type="date" value="${esc(l.enrollDate)}"></div></div>
+ <div class="r"><div><label>Método de pagamento</label><select id="l_pm">${opts(DB.settings.payMethods.map(p=>[p,p]),l.payMethod,'Não informado')}</select></div><div><label>Valor pago (R$)</label><input id="l_v" type="number" min="0" step="0.01" value="${esc(l.amount)}"></div></div></fieldset>
+ <fieldset><legend>Acompanhamento</legend><div class="r"><div><label>Entrou por sinal?</label><select id="l_s">${opts(yo,l.bySignal,'Não informado')}</select></div><div><label>Realizou o tour?</label><select id="l_t">${opts(yo,l.didTour,'Não informado')}</select></div></div><label>Observação</label><textarea id="l_no" rows="3">${esc(l.note)}</textarea></fieldset>
+ <button class="p" onclick="saveLead('${id||''}')">Salvar</button> <button onclick="closeM()">Cancelar</button>`)}
+function saveLead(id){
+ const d={kind:val('l_k'),name:val('l_n'),opp:val('l_o'),contactDate:val('l_dc'),enrollDate:val('l_de'),payMethod:val('l_pm'),amount:val('l_v')===''?'':+val('l_v'),bySignal:val('l_s'),didTour:val('l_t'),note:val('l_no')};
+ if(!d.name&&!d.opp&&!d.contactDate&&!d.enrollDate&&!d.payMethod&&d.amount===''&&!d.bySignal&&!d.didTour&&!d.note){alert('Preencha ao menos um campo para salvar.');return}
+ if(id)Object.assign($(DB.leads,id),d,{updatedBy:ME.id});else DB.leads.push({id:uid(),...d,createdBy:ME.id});
+ save();closeM();toast(id?'Registro atualizado.':(d.kind=='matricula'?'Matrícula registrada.':'Interessado registrado.'));view=d.kind=='matricula'?'mat':'int';render()}
+function delLead(id){if(!confirm('Excluir este registro?'))return;DB.leads=DB.leads.filter(l=>l.id!=id);save();toast('Registro excluído.');render()}
+function exportL(){const L=leadFiltered(),mat=view=='mat',H=['Situação','Nome','Nº oportunidade','Data de contato','Data da matrícula financeira','Método de pagamento','Valor pago','Entrou por sinal','Realizou o tour','Observação'];
+ const rows=L.map(l=>[l.kind=='matricula'?'Matrícula':'Interessado',l.name,l.opp,fd(l.contactDate),fd(l.enrollDate),l.payMethod,(l.amount===''||l.amount==null)?'':String(l.amount).replace('.',','),yx(l.bySignal),yx(l.didTour),l.note]);
+ const tsv=[H,...rows].map(r=>r.map(c=>String(c??'').replace(/[\t\r\n]+/g,' ')).join('\t')).join('\n');
+ const html='<html><head><meta charset="utf-8"></head><body><table border="1">'+[H,...rows].map((r,i)=>'<tr>'+r.map(c=>`<${i?'td':'th'}>${esc(c)}</${i?'td':'th'}>`).join('')+'</tr>').join('')+'</table></body></html>';
+ try{const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([html],{type:'application/vnd.ms-excel'}));a.download='dani-conecta-'+(mat?'matriculas':'interessados')+'.xls';a.click()}catch(e){}
+ modal(`<h2>Exportar Excel</h2><p class="dm">${L.length} registro(s) com a busca atual. Se o download não iniciar neste ambiente, copie o texto abaixo e cole no Excel.</p><textarea rows="10" readonly onfocus="this.select()">${esc(tsv)}</textarea><br><br><button onclick="closeM()">Fechar</button>`)}
+/* Relatórios */
+function vRel(m){m.innerHTML=`<div class="top"><h2>Relatórios</h2><button onclick="exportX()">Exportar Excel</button></div><p class="dm">Considera os filtros aplicados em Agendamentos (${filtered().length} tours).</p>${charts(filtered(),true)}<div class="g2">${bars('Interessados e matrículas (sem filtro)',{Interessados:leadStats().i,Matrículas:leadStats().m})}${bars('Matrículas por forma de pagamento',count(DB.leads.filter(l=>l.kind=='matricula'),l=>l.payMethod||'Não informado'))}</div>`}
+/* Usuários e configurações */
+function vUsr(m){m.innerHTML=`<div class="top"><h2>Usuários</h2><button class="p" onclick="userForm()">+ Novo usuário</button></div><div class="tw"><table style="min-width:520px"><thead><tr><th>Nome</th><th>Usuário</th><th>Função</th><th>Situação</th><th></th></tr></thead><tbody>${DB.users.map(u=>`<tr><td>${esc(u.name)}</td><td>${esc(u.login)}</td><td>${esc(u.role)}</td><td>${u.active?'Ativo':'Desativado'}</td><td><button class="s" onclick="userForm('${u.id}')">Editar</button></td></tr>`).join('')}</tbody></table></div><p class="dm">Clique em "Editar" para trocar nome, usuário ou senha de alguém, ou para desativar o acesso. Todas as funções têm hoje as mesmas permissões, exceto Usuários e Configurações (só Administrador). A estrutura settings.rolePerms está pronta para permissões por função.</p>`}
+const pv=i=>(document.getElementById(i)||{}).value||'';
+const showPw=ids=>`<label style="display:flex;align-items:center;gap:6px;margin:0 0 8px"><input type="checkbox" style="width:auto" onchange="${JSON.stringify(ids).replace(/"/g,"'")}.forEach(i=>document.getElementById(i).type=this.checked?'text':'password')"> Mostrar senha</label>`;
+function pwErr(p,p2,req){if(!p&&!p2&&!req)return'';if(p.length<6)return'A senha deve ter pelo menos 6 caracteres.';if(p!==p2)return'As senhas não conferem.';return''}
+function userForm(id){const u=id?$(DB.users,id):{name:'',login:'',role:'Consultor Comercial',active:true};
+ modal(`<h2>${id?'Editar usuário':'Novo usuário'}</h2><p class="dm">${id?'Para manter a senha atual, deixe os campos de senha em branco.':'A pessoa entrará com o usuário e a senha definidos aqui.'}</p><br>
+ <div class="r"><div><label>Nome completo</label><input id="un" value="${esc(u.name)}"></div><div><label>E-mail ou usuário (para entrar)</label><input id="ul" value="${esc(u.login)}" autocomplete="off"></div></div>
+ <div class="r"><div><label>${id?'Nova senha':'Senha'}</label><input id="up" type="password" autocomplete="new-password" placeholder="Mínimo 6 caracteres"></div><div><label>Confirmar senha</label><input id="up2" type="password" autocomplete="new-password"></div></div>${showPw(['up','up2'])}
+ <div class="r"><div><label>Função</label><select id="ur">${opts(DB.settings.roles.map(r=>[r,r]),u.role)}</select></div></div>
+ <label style="display:flex;align-items:center;gap:6px"><input type="checkbox" id="ua" style="width:auto" ${u.active?'checked':''}> Usuário ativo</label><br><button class="p" onclick="saveUser('${id||''}')">Salvar usuário</button> <button onclick="closeM()">Cancelar</button>`)}
+function saveUser(id){const n=val('un'),l=val('ul'),p=pv('up'),p2=pv('up2');
+ if(!n||!l){alert('Preencha o nome e o usuário de acesso.');return}
+ const e=pwErr(p,p2,!id);if(e){alert(e);return}
+ if(DB.users.some(x=>x.id!=id&&norm(x.login)==norm(l))){alert('Este usuário de acesso já existe.');return}
+ const d={name:n,login:l,role:val('ur'),active:document.getElementById('ua').checked};if(p)d.pw=p;
+ if(id){const adms=DB.users.filter(x=>x.id!=id&&x.active&&x.role=='Administrador').length;
+  if(id==ME.id&&!d.active){alert('Você não pode desativar o próprio usuário.');return}
+  if(!adms&&(d.role!='Administrador'||!d.active)){alert('É preciso manter pelo menos um administrador ativo.');return}
+  Object.assign($(DB.users,id),d)}else DB.users.push({id:uid(),...d});
+ save();closeM();toast(id?'Usuário atualizado.':'Usuário criado.');render()}
+/* Meu perfil / primeiro acesso */
+function profileForm(first){const u=ME;
+ modal(`<h2>${first?'Primeiro acesso':'Meu perfil'}</h2><p class="dm">${first?'Informe seu nome e crie uma senha pessoal para continuar.':'Altere seu nome, seu usuário de acesso ou sua senha.'}</p><br>
+ <div class="r"><div><label>Seu nome</label><input id="mn_n" value="${first?'':esc(u.name)}" placeholder="Ex.: Danielle Martins"></div><div><label>E-mail ou usuário (para entrar)</label><input id="mn_l" value="${esc(u.login)}" autocomplete="off"></div></div>
+ ${first?'':'<div class="r"><div><label>Senha atual (necessária só para trocar a senha)</label><input id="mn_c" type="password" autocomplete="current-password"></div></div>'}
+ <div class="r"><div><label>${first?'Nova senha':'Nova senha (opcional)'}</label><input id="mn_p" type="password" autocomplete="new-password" placeholder="Mínimo 6 caracteres"></div><div><label>Confirmar senha</label><input id="mn_p2" type="password" autocomplete="new-password"></div></div>${showPw(['mn_p','mn_p2'].concat(first?[]:['mn_c']))}
+ <br><button class="p" onclick="saveProfile(${first?1:0})">Salvar</button>${first?'':' <button onclick="closeM()">Cancelar</button>'}`)}
+function saveProfile(first){const n=val('mn_n'),l=val('mn_l'),p=pv('mn_p'),p2=pv('mn_p2');
+ if(!n||!l){alert('Preencha seu nome e o usuário de acesso.');return}
+ const e=pwErr(p,p2,first);if(e){alert(e);return}
+ if(p&&!first&&pv('mn_c')!==ME.pw){alert('A senha atual está incorreta.');return}
+ if(first&&p===ME.pw){alert('Escolha uma senha diferente da senha inicial.');return}
+ if(DB.users.some(x=>x.id!=ME.id&&norm(x.login)==norm(l))){alert('Este usuário de acesso já existe.');return}
+ ME.name=n;ME.login=l;if(p)ME.pw=p;save();closeM();toast('Perfil salvo.');render()}
+function vCfg(m){const L=(t,arr,fn)=>`<div class="box"><h3>${t}</h3>${arr.map(fn).join('')}<div style="display:flex;gap:6px;margin-top:8px"><input id="n_${t}" placeholder="Novo item">${t=='Status'?`<input id="c_${t}" type="color" value="#0a3f8f" style="width:50px;padding:2px">`:''}<button class="p" onclick="addOpt('${t}')">Adicionar</button></div></div>`;
+ m.innerHTML=`<div class="top"><h2>Configurações</h2><button class="d" onclick="if(confirm('Apagar todos os dados locais e restaurar a demonstração?')){Repo.reset();DB=seed();ME=null;render()}">Restaurar dados de demonstração</button></div><div class="g2">${L('Status',DB.statuses,s=>`<div style="margin:6px 0"><span class="tag" style="--c:${s.color}">${esc(s.name)}</span></div>`)}${L('Cursos',DB.courses,s=>`<div>${esc(s.name)}</div>`)}${L('Origens',DB.settings.origins,s=>`<div>${esc(s)}</div>`)}${L('Tipos de visitante',DB.settings.kinds,s=>`<div>${esc(s)}</div>`)}</div>`}
+function addOpt(t){const n=val('n_'+t);if(!n)return;if(t=='Status')DB.statuses.push({id:uid(),name:n,color:val('c_'+t)});else if(t=='Cursos')DB.courses.push({id:uid(),name:n});else if(t=='Origens')DB.settings.origins.push(n);else DB.settings.kinds.push(n);save();toast('Item adicionado.');render()}
+/* ===== 6. Modais, formulário de tour, detalhe ===== */
+const val=i=>(document.getElementById(i)||{}).value?.trim?.()??'';
+function modal(h){document.getElementById('mo').innerHTML=`<div class="ov"><div class="md" role="dialog">${h}</div></div>`}
+function closeM(){document.getElementById('mo').innerHTML=''}
+function detail(id){const t=$(DB.tours,id),v=V(t),cs=DB.companions.filter(c=>c.tourId==id),h=DB.history.filter(x=>x.tourId==id).sort((a,b)=>a.at.localeCompare(b.at));
+ modal(`<div class="top"><h2>${esc(v.name)}</h2><button onclick="closeM()">Fechar</button></div><p>${fd(t.date)} às ${t.time} · ${t.people} pessoa(s) · ${tag(t)}<br>Telefone: ${esc(v.phone)} · Cidade: ${esc(v.city||'—')}<br>Curso de interesse: ${esc(CRS(t.interest))}<br>Tipo de tour: ${typeTxt(t)}<br>Consultor: ${esc(CN(t))}<br>Anotação: ${esc(t.note||'—')}</p><h3>Acompanhantes</h3>${cs.map(c=>`<div>${esc(c.name||'(sem nome)')}${c.rel?' — '+esc(c.rel):''}</div>`).join('')||'<p class="dm">Nenhum acompanhante registrado.</p>'}<br><h3>Histórico de alterações</h3>${h.map(x=>`<div class="hi"><small>${new Date(x.at).toLocaleString('pt-BR')} — ${esc((($(DB.users,x.userId))||{}).name||'')}</small><br>${esc(x.text)}</div>`).join('')}<br><button class="p" onclick="tourForm('${id}')">Editar</button> <button onclick="tourForm('${id}',1)">Remarcar</button> <button onclick="profile('${v.id}')">Perfil do visitante</button>`)}
+let F={};
+function compRow(c={}){return`<div class="r cp"><div><label>Nome do acompanhante</label><input class="cn" value="${esc(c.name)}"></div><div><label>Relação</label><input class="cr" value="${esc(c.rel)}" placeholder="Pai, mãe, irmão..."></div><div style="align-self:end"><button type="button" class="s d" onclick="this.closest('.cp').remove()">Remover</button></div></div>`}
+function tourForm(id,resched,vid){
+ const t=id?$(DB.tours,id):{date:TODAY,time:'09:00',people:1,type:'geral',statusId:DB.statuses[0].id,consultantId:ME.id,note:'',interest:'',tourCourse:''};
+ const v=id?V(t):vid?$(DB.visitors,vid):{kind:DB.settings.kinds[0]};if(vid)t.interest=v.interest||'';
+ F={id,vid:id?v.id:vid||null,dupOk:false,confOk:false};const cs=id?DB.companions.filter(c=>c.tourId==id):[];
+ const co=DB.courses.map(c=>[c.id,c.name]);
+ modal(`<h2>${id?(resched?'Remarcar tour':'Editar tour'):'Novo tour'}</h2><br><div id="warn"></div>
+ <fieldset><legend>Visitante</legend><div class="r"><div><label>Nome completo *</label><input id="f_n" value="${esc(v.name)}" ${F.vid?'readonly':''}></div><div><label>Telefone/WhatsApp *</label><input id="f_p" value="${esc(v.phone)}" ${F.vid?'readonly':''}></div></div><div class="r"><div><label>Idade</label><input id="f_a" type="number" min="0" value="${esc(v.age)}"></div><div><label>Cidade onde reside</label><input id="f_c" value="${esc(v.city)}" list="dl_c"><datalist id="dl_c">${cities().map(c=>`<option>${esc(c)}`).join('')}</datalist></div></div></fieldset>
+ <fieldset><legend>Interesse</legend><div class="r"><div><label>Curso de interesse</label><input id="f_i" list="dl_i" value="${esc(t.interest?CRS(t.interest):'')}" placeholder="Digite para pesquisar"><datalist id="dl_i">${DB.courses.map(c=>`<option>${esc(c.name)}`).join('')}</datalist></div><div><label>Tipo de visitante</label><select id="f_k">${opts(DB.settings.kinds.map(k=>[k,k]),v.kind)}</select></div><div><label>Como conheceu a Estácio?</label><select id="f_o">${opts(DB.settings.origins.map(k=>[k,k]),v.origin,'Selecione')}</select></div></div></fieldset>
+ <fieldset><legend>Tour</legend><div class="r"><div><label>Data *</label><input id="f_d" type="date" value="${t.date}"></div><div><label>Horário *</label><input id="f_h" type="time" value="${t.time}"></div><div><label>Quantidade de pessoas</label><input id="f_q" type="number" min="1" value="${t.people}"></div></div>
+ <div class="r"><div><label>O tour será direcionado ao curso ou geral?</label><select id="f_t" onchange="document.getElementById('f_tcw').style.display=this.value=='curso'?'block':'none'">${opts([['geral','Tour geral pela faculdade'],['curso','Tour direcionado ao curso']],t.type)}</select></div><div id="f_tcw" style="display:${t.type=='curso'?'block':'none'}"><label>Curso do tour</label><select id="f_tc">${opts(co,t.tourCourse,'Selecione')}</select></div></div>
+ <label>Acompanhantes (opcional)</label><div id="cps">${cs.map(compRow).join('')}</div><button type="button" class="s" onclick="document.getElementById('cps').insertAdjacentHTML('beforeend',compRow())">+ Adicionar acompanhante</button></fieldset>
+ <fieldset><legend>Acompanhamento</legend><div class="r"><div><label>Status</label><select id="f_s">${opts(DB.statuses.map(s=>[s.id,s.name]),t.statusId)}</select></div><div><label>Consultor responsável</label><select id="f_u">${opts(DB.users.filter(u=>u.active||u.id==t.consultantId).map(s=>[s.id,s.name]),t.consultantId)}</select></div></div><label>Anotação</label><textarea id="f_no" rows="3">${esc(t.note)}</textarea></fieldset>
+ <button class="p" onclick="submitTour()">Salvar tour</button> <button onclick="closeM()">Cancelar</button>`);
+ if(resched)document.getElementById('f_d').focus()}
+function useExisting(vid){F.vid=vid;F.dupOk=true;const v=$(DB.visitors,vid);document.getElementById('f_n').value=v.name;document.getElementById('f_p').value=v.phone;submitTour()}
+function newRecord(){F.dupOk=true;submitTour()}
+function proceed(){F.confOk=true;submitTour()}
+function submitTour(){
+ const n=val('f_n'),p=val('f_p'),d=val('f_d'),h=val('f_h'),w=document.getElementById('warn');
+ if(!n||!p||!d||!h){w.innerHTML='<div class="wn">Preencha nome, telefone, data e horário.</div>';return}
+ if(val('f_t')=='curso'&&!val('f_tc')){w.innerHTML='<div class="wn">Selecione o curso do tour direcionado.</div>';return}
+ if(!F.vid&&!F.dupOk){const dp=findDup(n,p);if(dp.length){w.innerHTML=`<div class="wn"><b>Este visitante já possui cadastro.</b> Deseja abrir o cadastro existente ou criar um novo registro?${dp.map(v=>`<div style="margin-top:6px">${esc(v.name)} — ${esc(v.phone)} — ${esc(v.city||'')} <button class="s" onclick="useExisting('${v.id}')">Usar este cadastro</button></div>`).join('')}<div style="margin-top:8px"><button class="s" onclick="newRecord()">Criar novo registro</button></div></div>`;return}}
+ if(!F.confOk){const cf=findConflict(d,h,F.id);if(cf.length){w.innerHTML=`<div class="wn"><b>⚠️ Já existe um tour agendado para este horário.</b>${cf.map(x=>`<div>${fd(x.date)} ${x.time} — ${esc(V(x).name)} — ${esc(CRS(x.interest))} — ${esc(CN(x))}</div>`).join('')}<div style="margin-top:8px"><button class="s" onclick="document.getElementById('warn').innerHTML='';document.getElementById('f_h').focus()">Voltar e escolher outro horário</button> <button class="s" onclick="proceed()">Prosseguir mesmo assim</button></div></div>`;return}}
+ const cName=val('f_i'),cObj=DB.courses.find(c=>norm(c.name)==norm(cName));let interest=cObj?cObj.id:'';
+ if(cName&&!cObj){if(!confirm('O curso "'+cName+'" não está cadastrado. Adicionar à lista de cursos?'))return;const nc={id:uid(),name:cName};DB.courses.push(nc);interest=nc.id}
+ let vis=F.vid?$(DB.visitors,F.vid):null;const vd={age:val('f_a'),city:val('f_c'),kind:val('f_k'),origin:val('f_o'),interest};
+ if(vis)Object.assign(vis,vd);else{vis={id:uid(),name:n,phone:p,...vd};DB.visitors.push(vis)}
+ const td={visitorId:vis.id,date:d,time:h,people:+val('f_q')||1,interest,type:val('f_t'),tourCourse:val('f_t')=='curso'?val('f_tc'):'',statusId:val('f_s'),consultantId:val('f_u'),note:val('f_no')};
+ let tid=F.id;
+ if(tid){const o=$(DB.tours,tid);
+  if(o.date!=d)log(tid,`Data alterada de ${fd(o.date)} para ${fd(d)}.`);
+  if(o.time!=h)log(tid,`Horário alterado de ${o.time} para ${h}.`);
+  if(o.statusId!=td.statusId)log(tid,`Status alterado de ${ST(o).name} para ${$(DB.statuses,td.statusId).name}.`);
+  if(o.consultantId!=td.consultantId)log(tid,`Consultor alterado de ${CN(o)} para ${$(DB.users,td.consultantId).name}.`);
+  if(o.note!=td.note)log(tid,'Anotação atualizada.');
+  if(o.people!=td.people)log(tid,`Quantidade de pessoas alterada de ${o.people} para ${td.people}.`);
+  Object.assign(o,td)}
+ else{tid=uid();DB.tours.push({id:tid,...td,createdBy:ME.id});log(tid,'Agendamento criado.')}
+ DB.companions=DB.companions.filter(c=>c.tourId!=tid);
+ document.querySelectorAll('.cp').forEach(r=>{const nm=r.querySelector('.cn').value.trim(),rl=r.querySelector('.cr').value.trim();if(nm||rl)DB.companions.push({id:uid(),tourId:tid,name:nm,rel:rl})});
+ save();closeM();toast(F.id?'Agendamento atualizado.':'Tour criado com sucesso.');render()}
+/* ===== 7. Exportação (respeita filtros) ===== */
+function exportX(){const L=filtered(),H=['Data','Horário','Visitante','Telefone','Idade','Cidade','Curso de interesse','Tipo de tour','Curso do tour','Pessoas','Acompanhantes','Status','Consultor','Anotação'];
+ const rows=L.map(t=>{const v=V(t);return[fd(t.date),t.time,v.name,v.phone,v.age,v.city,CRS(t.interest),t.type=='curso'?'Direcionado':'Geral',t.type=='curso'?CRS(t.tourCourse):'',t.people,DB.companions.filter(c=>c.tourId==t.id).map(c=>c.name+(c.rel?' ('+c.rel+')':'')).join('; '),ST(t).name,CN(t),t.note]});
+ const tsv=[H,...rows].map(r=>r.map(c=>String(c??'').replace(/[\t\r\n]+/g,' ')).join('\t')).join('\n');
+ const html='<html><head><meta charset="utf-8"></head><body><table border="1">'+[H,...rows].map((r,i)=>'<tr>'+r.map(c=>`<${i?'td':'th'}>${esc(c)}</${i?'td':'th'}>`).join('')+'</tr>').join('')+'</table></body></html>';
+ try{const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([html],{type:'application/vnd.ms-excel'}));a.download='dani-conecta-tours.xls';a.click()}catch(e){}
+ modal(`<h2>Exportar Excel</h2><p class="dm">${L.length} registro(s) com os filtros atuais. Se o download não iniciar neste ambiente, copie o texto abaixo e cole no Excel.</p><textarea rows="10" readonly onfocus="this.select()">${esc(tsv)}</textarea><br><br><button onclick="closeM()">Fechar</button>`)}
+render();
+</script></body></html>
+
+</body></html>
